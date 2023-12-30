@@ -1,0 +1,56 @@
+:root {
+    //Font
+    --ff-sans: 'Kumbh Sans', sans-serif;
+    
+    //Typography
+    --fw-light: 400;
+    --fw-bold: 700;
+
+    --fs-100: 0.625rem; //10px
+    --fs-200: 0.688rem; //11px
+    --fs-300: 0.75rem;  //12px
+    --fs-400: 0.875rem; //14px
+    --fs-500: 1rem;     //16px
+    --fs-600: 1.125rem; //18px
+    --fs-700: 1.25rem;  //20px
+    --fs-800: 2rem;     //32px
+    --fs-900: 3rem;     //48px
+
+    //Colors
+    --clr--primary-orange: hsl(26, 100%, 55%);
+    --clr--primary-pale-orange: hsl(25, 100%, 94%);
+
+    --clr--neutral-blue: hsl(220, 13%, 13%);
+    --clr--neutral-dark-grayish-blue: hsl(219, 9%, 45%);
+    --clr--neutral-grayish-blue: hsl(220, 14%, 75%);
+    --clr--neutral-light-grayish-blue: hsl(223, 64%, 98%);
+    
+    --clr--white: hsl(0, 0%, 100%);
+    --clr--black: hsl(0, 0%, 0%); //(with 75% opacity for lightbox background)
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  outline: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+    font-family: var(--ff-sans);
+    font-size: var(--fs-500);
+    color:var(--clr--neutral-dark-grayish-blue)    
+}
