@@ -1,40 +1,25 @@
-import React, { useState } from "react"
+import React, { useCallback, useState } from "react"
 import icon_cart from "./assets/images/icon-cart.svg"
 import icon_close from "./assets/images/icon-close.svg"
 import icon_delete from "./assets/images/icon-delete.svg"
-import product1 from "./assets/images/image-product-1.jpg"
-import product2 from "./assets/images/image-product-2.jpg"
-import product3 from "./assets/images/image-product-3.jpg"
-import product4 from "./assets/images/image-product-4.jpg"
-import product1Thumbnail from "./assets/images/image-product-1-thumbnail.jpg"
-import product2Thumbnail from "./assets/images/image-product-2-thumbnail.jpg"
-import product3Thumbnail from "./assets/images/image-product-3-thumbnail.jpg"
-import product4Thumbnail from "./assets/images/image-product-4-thumbnail.jpg"
 import icon_plus from "./assets/images/icon-plus.svg"
 import icon_minus from "./assets/images/icon-minus.svg"
 import Header from "./components/Header"
+import Slider from "./components/Slider"
+
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
+  
   return (
     <>
       <main>
         <div className="wrapper">
           <Header />
           <div className="wrapper-narrow">
-            <div className="layout-grid">
+            <div className="main-content layout-grid">
               <div className="col">
-                <div className="product-images layout-grid">
-                  <div className="image">
-                    <img src={product1} alt="" />
-                  </div>
-                  <div className="image-thumbnail layout-grid">
-                    <img src={product1Thumbnail} alt="" />
-                    <img src={product2Thumbnail} alt="" />
-                    <img src={product3Thumbnail} alt="" />
-                    <img src={product4Thumbnail} alt="" />
-                  </div>
-                </div>
+               <Slider />
               </div>
               <div className="col">
                 <div className="product-details">

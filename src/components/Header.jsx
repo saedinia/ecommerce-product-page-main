@@ -20,8 +20,8 @@ function Header() {
     }, [])
 
     return (
-    <header className="layout-grid">
-        <div className="col logo-nav">
+    <header>
+        <div className="logo-nav">
             <img src={icon_menu} alt="" className="menu-icon" onClick={() => handleMenuMobile(true)} />
             <img className="logo"src={logo} alt="" />
             <nav>
@@ -35,7 +35,7 @@ function Header() {
                 </ul>
             </nav>
         </div>
-        <div className="col cart-avatar">
+        <div className="cart-avatar">
             <div className="cart">
                 <img src={icon_cart} alt="" />
                 <span>3</span>
