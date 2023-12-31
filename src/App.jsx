@@ -1,7 +1,7 @@
-import React from "react"
-import logo from "./assets/images/logo.svg"
+import React, { useState } from "react"
 import icon_cart from "./assets/images/icon-cart.svg"
-import avatar from "./assets/images/image-avatar.png"
+import icon_close from "./assets/images/icon-close.svg"
+import icon_delete from "./assets/images/icon-delete.svg"
 import product1 from "./assets/images/image-product-1.jpg"
 import product2 from "./assets/images/image-product-2.jpg"
 import product3 from "./assets/images/image-product-3.jpg"
@@ -12,32 +12,15 @@ import product3Thumbnail from "./assets/images/image-product-3-thumbnail.jpg"
 import product4Thumbnail from "./assets/images/image-product-4-thumbnail.jpg"
 import icon_plus from "./assets/images/icon-plus.svg"
 import icon_minus from "./assets/images/icon-minus.svg"
+import Header from "./components/Header"
 
 function App() {
+  const [count, setCount] = useState(0);
   return (
     <>
       <main>
         <div className="wrapper">
-          <header>
-            <div className="logo">
-              <img src={logo} alt="" />
-            </div>
-            <nav>
-              <ul>
-                <li>Collections</li>
-                <li>Men</li>
-                <li className="active">Women</li>
-                <li>About</li>
-                <li>Contact</li>
-              </ul>
-            </nav>
-            <div className="cart">
-              <img src={icon_cart} alt="" />
-            </div>
-            <div className="avatar">
-              <img src={avatar} alt="" />
-            </div>
-          </header>
+          <Header />
           <div className="wrapper-narrow">
             <div className="layout-grid">
               <div className="col">
@@ -68,11 +51,11 @@ function App() {
                     $250.00
                   </div>
                   <footer>
-                    <button>
+                    <button onClick={() => setCount((prevCount) => prevCount - 1)}>
                       <img src={icon_minus} alt="" />
                     </button>
-                    <input type="number" name="" id="" value="0" />
-                    <button>
+                    <input type="number" name="count" id="count" value={count} disabled/>
+                    <button onClick={() => setCount((prevCount) => prevCount + 1)}>
                       <img src={icon_plus} alt="" />
                     </button>
                     <div className="add-to-cart">
