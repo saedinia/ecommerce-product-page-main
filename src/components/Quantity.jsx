@@ -1,10 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import icon_plus from "./../assets/images/icon-plus.svg"
 import icon_minus from "./../assets/images/icon-minus.svg"
 import icon_cart_white from "./../assets/images/icon-cart-white.svg"
 
-function Quantity() {
+function Quantity(props) {
     const [count, setCount] = useState(0)
+    const [cartCount, setCartCount] = useState(0)
+    useEffect(() => {
+        props.onChangeQuanity({"cartCount": cartCount})
+    }, [cartCount])
+
     return (
     <div className="quantity">
         <div className="quantity-container">
@@ -17,7 +22,7 @@ function Quantity() {
             </button>
         </div>
         <div className="add-to-cart">
-            <button className="add-to-cart-btn"><img src={icon_cart_white} /> Add to cart</button>
+            <button className="add-to-cart-btn" onClick={() => setCartCount(count)}><img src={icon_cart_white} /> Add to cart</button>
         </div>
     </div>
   )

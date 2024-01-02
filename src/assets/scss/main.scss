@@ -57,9 +57,72 @@ body {
 
 main {
   .wrapper {
+    position: relative;
     @media screen and (min-width: 48em) {
       margin-inline: auto;
       width: 1100px;
+    }
+
+    .cart-items {
+      position: absolute;
+      width: 100%;
+      z-index: 900;
+      top: 70px;
+      left: 0;
+      display: none;
+
+      &.show {
+        display: block;
+      }
+
+      .cart-container {
+        background: var(--clr--white);
+        border-radius: .75rem;
+        margin: .5rem;
+
+        .cart-header {
+          border-bottom: 1px solid var(--clr--neutral-grayish-blue);
+          color: var(--clr--black);
+          padding: 1.5rem;
+        }
+
+        .items {
+          display: grid;
+          padding: 1.5rem;
+          gap: 1.25rem;
+
+          .item {
+            display: flex;          
+            align-items: center;
+
+            .item-image {
+              width: 50px;
+              object-fit: cover;
+              border-radius: .25rem;
+              margin-inline-end: .75rem;
+            }
+            
+            .item-name {
+              margin-bottom: .5rem;
+            }
+
+            .item-prices {
+              display: flex;
+              gap: .25rem;
+
+              .item-sum {
+                font-weight: var(--fw-bold);
+                color: var(--clr--black)
+              }
+            }
+
+            .delete-item {
+              margin-inline-start: 4rem;
+              cursor: pointer;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -179,8 +242,9 @@ main {
 
       .cart {
         position: relative;
+        cursor: pointer;
         
-        span {
+        .cart-count {
           padding: 0 6px;
           color: var(--clr--primary-pale-orange);
           background: var(--clr--primary-orange);
@@ -189,6 +253,11 @@ main {
           position: absolute;
           top: -5px;
           right: -10px;
+          display: none;
+          
+          &.show {
+            display: block;
+          }
         }
       }
 
@@ -208,7 +277,7 @@ main {
           }
         }
       }
-    }
+    }    
   }
 
   .main-content {
@@ -377,6 +446,18 @@ main {
 
 @media screen and (min-width: 48em) {
   main {
+
+    .wrapper {
+      .cart-items {
+        right: -20px;
+        left: unset;
+        width: 430px;
+
+        .cart-container {
+          box-shadow: 0px 4px 15px var(--clr--black);
+        }
+      }
+    }
     .main-content {
       margin-block: 5rem;
       grid-template-columns: 1fr 1fr;

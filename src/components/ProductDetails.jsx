@@ -1,7 +1,9 @@
 import React from 'react'
+import Quantity from './Quantity'
 
-function ProductDetails() {
+function ProductDetails(props) {
   return (
+    <>
     <div className="product-details">
         <h3>Sneaker Company</h3>
         <h1>Fall Limited Edition Sneakers</h1>
@@ -18,7 +20,8 @@ function ProductDetails() {
             </div>
         </div>
     </div>
-
+    <Quantity onChangeQuanity={props.onChangeState}/>
+    </>
   )
 }
 
