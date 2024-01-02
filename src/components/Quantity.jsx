@@ -22,7 +22,7 @@ function Quantity(props) {
             </button>
         </div>
         <div className="add-to-cart">
-            <button className="add-to-cart-btn" onClick={() => setCartCount(count)}><img src={icon_cart_white} /> Add to cart</button>
+            <button className="add-to-cart-btn" onClick={() => setCartCount(count)}><img src={icon_cart_white} alt=""/> Add to cart</button>
         </div>
     </div>
   )
