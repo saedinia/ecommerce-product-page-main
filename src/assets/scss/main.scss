@@ -39,7 +39,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  border: none;
+  border: 0;
   outline: none;
 }
 
@@ -52,7 +52,7 @@ svg {
 body {
     font-family: var(--ff-sans);
     font-size: var(--fs-500);
-    color:var(--clr--neutral-dark-grayish-blue)    
+    color: var(--clr--neutral-dark-grayish-blue)    
 }
 
 main {
@@ -234,7 +234,7 @@ main {
     }
     
     .cart-avatar {
-      width:40%;
+      width: 40%;
       display: flex;
       justify-content: flex-end;
       gap: 2rem;
@@ -454,10 +454,11 @@ main {
         width: 430px;
 
         .cart-container {
-          box-shadow: 0px 4px 15px var(--clr--black);
+          box-shadow: 0 4px 15px var(--clr--black);
         }
       }
     }
+
     .main-content {
       margin-block: 5rem;
       grid-template-columns: 1fr 1fr;
